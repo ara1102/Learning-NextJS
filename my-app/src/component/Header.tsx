@@ -1,11 +1,11 @@
+import Link from "next/link";
 import { useState } from "react";
-
 
 const Header = () => {
     const [open, setOpen] = useState(false)
     return (
         <header>
-            <nav className='navbar fixed w-full bg-gradient-to-r from-sky-500 to-indigo-500 p-2'>
+            <nav className='fixed w-full bg-gradient-to-r from-sky-500 to-indigo-500 p-2'>
                 <div className='flex items-center justify-between py-2 px-2 md:px-5 m-auto mb-2'>
 
                     <a href="" className='text-5xl pr-4 hover:text-gray-100'>
@@ -33,22 +33,20 @@ const Header = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                             </svg>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className={`${open ? "" : "hidden"} w-10 h-10 hover:text-gray-100`}>
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className={`${open ? "" : "hidden"} w-10 h-10 hover:text-gray-100`}>
+                                <path strokeLinecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
 
                         </button>
                     </div>
                 </div>
 
-                <div>
-                    <ul className={`sm:hidden
-                            bottom-0 py-2 px-1
-                            ${open ? "flex" : "hidden"} bg-blue-300 rounded-2xl`}>
+                <div className={`sm:hidden ${open ? "" : "hidden"}`}>
+                    <ul className={`flex bottom-0 py-2 px-1 bg-blue-300 rounded-2xl`}>
                         <li >
-                            <a href="#" className="font-semibold inline-block py-2 px-4 hover:text-gray-100">
+                            <Link href="#" className="font-semibold inline-block py-2 px-4 hover:text-gray-100">
                                 Why Phlog?
-                            </a>
+                            </Link>
                         </li>
                         <li
                         >
