@@ -1,6 +1,7 @@
-import Input from '@/component/Input';
+import Input from '@/pages/sections/Input';
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import HeadingText from './sections/HeadingText';
 
 // 1. confirmPassword validation
 // 2. make validation and error message modular
@@ -11,10 +12,10 @@ interface FormValues {
     lastName: string,
     email: string,
     phoneNumber: number,
-    gender: string,
     username: string,
     password: string,
     confirmPassword: string,
+    purpose: string,
     country: string,
     state: string,
     city: string,
@@ -61,15 +62,14 @@ const form = () => {
             message: "Password should contain at least 1 uppercase, 1 lowercase, 1 number, and 1 symbol(!#&*_)"
         }
     });
-
+    
     return (
         <>
             <main className=''>
                 <section className='bg-gradient-to-r from-sky-500 to-indigo-500 flex justify-center min-h-screen items-center'>
-                    <form onSubmit={handleSubmit((data) => { console.log(data); })} className='bg-white rounded-lg flex flex-col gap-y-3 p-5 mt-36 mx-4'>
+                    <form onSubmit={handleSubmit((data) => { console.log(data); })} className='bg-white rounded-lg flex flex-col gap-y-3 p-5 my-10 mx-4'>
 
-                        <p className='text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500 font-bold text-2xl sm:text-6xl self-center sm:p-3'>Welcome to Phlog!</p>
-                        <p className='text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500 font-bold text-lg sm:text-2xl self-center'>Fill out this form to sign up</p>
+                        <HeadingText title='Welcome to Phlog!' subTitle='Fill out this form to sign up'/>
 
                         <div>
                             <Input label="Email" name="email" register={register} type="email" svg="email"/>
@@ -96,13 +96,13 @@ const form = () => {
                         </div>
 
                         <div>
-                            <Input label="Username" name="username" register={register} type="text" svg="" placeholder='Set your username'/>
+                            <Input label="Username" name="username" register={register} type="text" svg="" placeholder='Set up your username'/>
                             <p className='text-red-500'>{errors.username?.message}</p>
                         </div>
 
                         <div className='sm:flex justify-between md:gap-2'>
                             <div className='mb-3 sm:mb-0 basis-1/2'>
-                                <Input label="Password" name="password" register={register} type="password" placeholder='Set your password' svg='eye'/>
+                                <Input label="Password" name="password" register={register} type="password" placeholder='Set up your password' svg='eye'/>
                                 <p className='text-red-500'>{errors.password?.message}</p>
                             </div>
                             <div className='basis-1/2'>
@@ -118,6 +118,7 @@ const form = () => {
                                 <option value="Business">Business</option>
                                 <option value="Hobby">Hobby</option>
                             </select>
+                            <p className='text-red-500'>{errors.purpose?.message}</p>
                         </div>
 
                         <div className='sm:flex justify-between md:gap-2'>
@@ -142,7 +143,7 @@ const form = () => {
                             </div>
                         </div>
                         
-                        <input type="submit" className='font-semibold py-2 rounded cursor-pointer items-end w-full bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg shadow-lg' />
+                        <input type="submit" className='font-semibold py-2 rounded cursor-pointer w-full bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg shadow-lg' />
                     </form>
                 </section>
             </main>

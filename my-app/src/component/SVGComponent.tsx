@@ -1,5 +1,5 @@
 import React from 'react'
-import EmailLogo from './emailLogo'
+import EmailLogo from './EmailLogo'
 import EyeLogo from './EyeLogo';
 import PhoneLogo from './PhoneLogo'
 import WorldLogo from './WorldLogo';
