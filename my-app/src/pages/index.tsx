@@ -1,10 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import Header from '@/component/Header'
 import Hero from './sections/Hero'
 import Footer from '@/component/Footer'
-import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 

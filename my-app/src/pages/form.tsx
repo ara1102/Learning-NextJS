@@ -7,7 +7,7 @@ import HeadingText from './sections/HeadingText';
 // 2. make validation and error message modular
 // 3. toggle password
 
-interface FormValues {
+export interface FormValues {
     firstName: string,
     lastName: string,
     email: string,
@@ -20,15 +20,16 @@ interface FormValues {
     state: string,
     city: string,
     postalCode: string,
+    dateOfBirth: Date,
 }
 
 const form = () => {
-
+    // UseFormRegister<FieldValues>
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<FormValues>();
+    } = useForm<FormValues>({mode:"onChange"});
 
     register("email", {
         pattern: {
@@ -72,7 +73,7 @@ const form = () => {
                         <HeadingText title='Welcome to Phlog!' subTitle='Fill out this form to sign up'/>
 
                         <div>
-                            <Input label="Email" name="email" register={register} type="email" svg="email"/>
+                            <Input label="Email" name="email" register={register} type="email" svg="email" errors={errors}/>
                             <p className='text-red-500' >{errors.email?.message}</p>
                         </div>
 
@@ -111,10 +112,14 @@ const form = () => {
                             </div>
                         </div>
 
+                        <div>
+                            <Input label="Date Of Birth" name="dateOfBirth" register={register} type="date" svg="" placeholder='Input your birth date'/>
+                            <p className='text-red-500'>{errors.dateOfBirth?.message}</p>
+                        </div>
+
                         <div className='flex-col'>
                             <label htmlFor="purpose" className='text-black font-semibold text-md'>What are you here for?</label>
-
-                            <select {...register("gender")} className="w-full placeholder-black rounded-md p-1 border-2">
+                            <select {...register("purpose")} className="w-full placeholder-black rounded-md p-1 border-2">
                                 <option value="Business">Business</option>
                                 <option value="Hobby">Hobby</option>
                             </select>

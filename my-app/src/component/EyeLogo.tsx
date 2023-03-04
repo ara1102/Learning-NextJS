@@ -5,7 +5,7 @@ const EyeLogo = () => {
     const [open, setOpen] = useState(false)
 
     return (
-        <button onClick={() => {
+        <button type='button' onClick={() => {
             setOpen(!open);
         }}>
 
