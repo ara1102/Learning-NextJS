@@ -14,11 +14,21 @@ const Hero = () => {
           <h1 className='py-5 text-6xl font-semibold'>Home of Photographers</h1>
           <p className='py-5 font-semibold'>Phlog is a place for people to promote their photography and appreciate other photography arts. To get started, you’ll need a Phlog account. It’s free to sign up, and you’ll get access to special content formats, custom analytics and more.</p>
 
-          <button className='shadow-xl bg-gradient-to-r from-sky-500 to-indigo-500 px-5 py-2 justify-self-end w-48 rounded-3xl hover:text-gray-100 transition ease-in-out delay-100 mt-5'>
-            <a href="form" className="font-semibold ">
-              Create an Account
-            </a>
-          </button>
+          <div className='flex flex-col flex-wrap sm:flex-row gap-2 items-center justify-center'>
+            <button className='shadow-xl bg-gradient-to-r from-sky-500 to-indigo-500 px-5 py-2 justify-self-end w-48 rounded-3xl hover:text-gray-100 transition ease-in-out delay-100 mt-5'>
+              <a href="form" className="font-semibold ">
+                Create an Account
+              </a>
+            </button>
+
+            <button className='shadow-xl bg-gradient-to-r from-sky-500 to-indigo-500 px-5 py-2 justify-self-end w-48 rounded-3xl hover:text-gray-100 transition ease-in-out delay-100 mt-5'>
+              <a href="photos" className="font-semibold ">
+                Gallery
+              </a>
+            </button>
+
+          </div>
+
         </div>
 
         <ImageText

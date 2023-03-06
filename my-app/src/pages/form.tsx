@@ -3,6 +3,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import HeadingText from './sections/HeadingText';
 
+
 // 1. confirmPassword validation
 // 2. make validation and error message modular
 // 3. toggle password

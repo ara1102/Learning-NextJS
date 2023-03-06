@@ -5,7 +5,7 @@ const Header = () => {
     const [open, setOpen] = useState(false)
     return (
         <header>
-            <nav className='fixed w-full bg-gradient-to-r from-sky-500 to-indigo-500 p-2'>
+            <nav className='fixed w-full bg-gradient-to-r from-sky-500 to-indigo-500 p-2 z-10'>
                 <div className='flex items-center justify-between py-2 px-2 md:px-5 m-auto mb-2'>
 
                     <a href="" className='text-5xl pr-4 hover:text-gray-100'>
